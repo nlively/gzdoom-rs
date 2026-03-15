@@ -1,0 +1,20 @@
+[package]
+name = "gz-playsim"
+description = "Game simulation: actors, map geometry, BSP, physics, line specials"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+gz-common = { path = "../gz-common" }
+gz-filesystem = { path = "../gz-filesystem" }
+gz-scripting = { path = "../gz-scripting" }
+glam.workspace = true
+rangemap.workspace = true
+smallvec.workspace = true
+bitflags.workspace = true
+rayon.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+tracing.workspace = true

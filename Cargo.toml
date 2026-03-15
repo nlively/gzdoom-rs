@@ -1,0 +1,76 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/gzdoom",
+    "crates/gz-common",
+    "crates/gz-filesystem",
+    "crates/gz-platform",
+    "crates/gz-audio",
+    "crates/gz-render",
+    "crates/gz-playsim",
+    "crates/gz-scripting",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+
+# Shared dependency versions across all crates
+[workspace.dependencies]
+# --- Math & data structures ---
+glam = "0.29"           # Vectors, matrices, quaternions (replaces vectors.h, matrix.h)
+rangemap = "1.5"        # Interval/range maps (replaces libraries/range_map)
+indexmap = "2"          # Insertion-ordered hash maps
+smallvec = "1"          # Stack-allocated small vectors (like TArray for short lists)
+bitflags = "2"          # Type-safe bitflags (replaces TFlags)
+
+# --- Strings & text ---
+bstr = "1"              # Byte-string handling for raw WAD strings
+encoding_rs = "0.8"     # Character encoding (WAD lump names can be Latin-1)
+
+# --- Compression (replaces bzip2, lzma, miniz bundled libs) ---
+bzip2 = "0.4"
+xz2 = "0.1"             # LZMA/XZ
+flate2 = "1"            # zlib/deflate/gzip (miniz replacement)
+zip = { version = "1", default-features = false }  # ZIP archive reading (PK3 files are ZIPs)
+
+# --- Serialization ---
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# --- Platform / windowing (replaces SDL2 on Linux/macOS) ---
+winit = "0.30"
+
+# --- Rendering ---
+ash = "0.38"            # Raw Vulkan bindings (mirrors the ZVulkan approach)
+gpu-allocator = "0.27"  # GPU memory allocator
+bytemuck = { version = "1", features = ["derive"] }  # Safe GPU buffer casting
+
+# --- Audio ---
+cpal = "0.15"           # Cross-platform audio I/O (replaces OpenAL on the output side)
+rodio = "0.19"          # Higher-level audio: decoding, mixing, playback
+
+# --- Scripting / JIT ---
+# cranelift — JIT backend for the ZScript VM (replaces asmjit).
+# Requires Rust >= 1.88 (ar_archive_writer dep uses let-chains).
+# Uncomment when you upgrade your toolchain:
+# cranelift-codegen = "0.113"
+# cranelift-frontend = "0.113"
+# cranelift-jit = "0.113"
+# cranelift-module = "0.113"
+
+# --- Parsing (for ZScript, DECORATE, ACS source) ---
+logos = "0.14"          # Lexer generator
+# chumsky = "0.9"       # Parser combinators — pulls ar_archive_writer (needs Rust >= 1.88)
+#                         Re-enable when upgrading the toolchain.
+
+# --- Async / threading ---
+rayon = "1"             # Data-parallelism (texture loading, BSP builds)
+crossbeam-channel = "0.5"
+
+# --- Error handling & logging ---
+thiserror = "2"
+anyhow = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }

@@ -1,0 +1,15 @@
+[package]
+name = "gz-audio"
+description = "Sound effects and music playback"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+gz-common = { path = "../gz-common" }
+gz-filesystem = { path = "../gz-filesystem" }
+cpal.workspace = true
+rodio.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+tracing.workspace = true

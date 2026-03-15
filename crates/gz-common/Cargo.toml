@@ -1,0 +1,17 @@
+[package]
+name = "gz-common"
+description = "Shared types, math, containers, and utilities"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+glam.workspace = true
+rangemap.workspace = true
+indexmap.workspace = true
+smallvec.workspace = true
+bitflags.workspace = true
+bstr.workspace = true
+encoding_rs.workspace = true
+serde.workspace = true
+thiserror.workspace = true

@@ -1,0 +1,22 @@
+[package]
+name = "gzdoom"
+description = "GZDoom port to Rust — main application entry point"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "gzdoom"
+path = "src/main.rs"
+
+[dependencies]
+gz-common = { path = "../gz-common" }
+gz-filesystem = { path = "../gz-filesystem" }
+gz-platform = { path = "../gz-platform" }
+gz-render = { path = "../gz-render" }
+gz-audio = { path = "../gz-audio" }
+gz-scripting = { path = "../gz-scripting" }
+gz-playsim = { path = "../gz-playsim" }
+anyhow.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true

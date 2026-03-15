@@ -1,0 +1,13 @@
+[package]
+name = "gz-platform"
+description = "Window management, input, timing, and OS abstraction"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+gz-common = { path = "../gz-common" }
+winit.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+tracing.workspace = true

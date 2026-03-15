@@ -1,0 +1,18 @@
+[package]
+name = "gz-render"
+description = "Vulkan renderer: 2D/3D hardware rendering pipeline"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+gz-common = { path = "../gz-common" }
+gz-platform = { path = "../gz-platform" }
+gz-filesystem = { path = "../gz-filesystem" }
+ash.workspace = true
+gpu-allocator.workspace = true
+bytemuck.workspace = true
+glam.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+tracing.workspace = true

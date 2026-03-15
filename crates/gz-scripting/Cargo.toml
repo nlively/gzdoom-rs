@@ -1,0 +1,20 @@
+[package]
+name = "gz-scripting"
+description = "ZScript VM + JIT, ACS bytecode interpreter, DECORATE parser"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+gz-common = { path = "../gz-common" }
+gz-filesystem = { path = "../gz-filesystem" }
+# cranelift — re-enable once Rust >= 1.88 (see workspace Cargo.toml)
+# cranelift-codegen.workspace = true
+# cranelift-frontend.workspace = true
+# cranelift-jit.workspace = true
+# cranelift-module.workspace = true
+logos.workspace = true
+# chumsky.workspace = true  # re-enable with Rust >= 1.88
+thiserror.workspace = true
+anyhow.workspace = true
+tracing.workspace = true

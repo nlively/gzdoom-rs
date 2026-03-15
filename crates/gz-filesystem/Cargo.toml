@@ -1,0 +1,16 @@
+[package]
+name = "gz-filesystem"
+description = "Virtual filesystem: WAD, PK3/ZIP, and directory containers"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+gz-common = { path = "../gz-common" }
+bzip2.workspace = true
+xz2.workspace = true
+flate2.workspace = true
+zip.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
